@@ -28,7 +28,7 @@ Exercices CSS
 20. apple:first-of-type
 21. :nth-of-type(even)
 22. :nth-of-type(2n+3)
-23. apple:only-of-type
+23. plate apple:only-of-type
 24. .small:last-of-type
 25. bento:empty
 26. apple:not(.small)
