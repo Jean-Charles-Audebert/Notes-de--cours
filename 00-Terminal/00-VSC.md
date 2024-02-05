@@ -5,6 +5,15 @@
 ### Mithril emmet
 
 Utilise les raccourcis Emmett mais permet les ajouts de multiples commandes
+Exemple : `link:css` crée automatiquement la référence(href="style.css") pour générer une balise lien avec un fichier. Ce fichier n'existe pas encore.
+`ctrl + click` sur le lien de ce fichier, crée le fichier dans le répertoire courant.
+raccourcis css exemples:
+`h200` : height: 200px;
+`w200` : width : 200px;
+`ba` : background;
+`bgc` : bg-color ;
+`db` : display-block
+etc...
 
 ### Image Preview
 
@@ -16,7 +25,7 @@ Permet les screenshots des codes dans VSC
 
 ### Live Share
 
-Partage d'écran très amélioré, permet d'éditer à plusieurs un fichier
+Partage d'écran très amélioré, permet d'éditer à plusieurs un ou des fichiers.
 
 ### Thunder client
 
