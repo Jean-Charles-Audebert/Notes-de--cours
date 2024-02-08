@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+section:first-child{
+    background-color: yellow;
+}
+
+section:nth-child(2) {
+    background-color: red;
+}
+
+img {
+    width: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div {
+    height: 200px;
+    width: 200px;
+    background: lightcoral;
+    margin: 60px;
+}
+
+input[type="checkbox"] {
+    margin-top: 60px;
+}
+
+input[type="checkbox"]:checked {
+    margin-top: 30px;
+}
+
+a:visited {
+    color: brown;
+}
+
+
+  /* Step 1: Common Properties: All required to make icons render reliably - we did this above but it's included here for the full demo */
+  .icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Step 2: Reference Individual Icons */
+  /* Note: Make sure to include the correct weight and Unicode value for the icon */
+
+  /* an example rule targeting any element with the "account" class to render fa-user icon in the Solid style */
+  .account::before {
+    font: var(--fa-font-solid);
+    content: "\f007";
+  }
+
+  /* an example rule targeting any element with the "warning" class to render fa-triangle-exclamation icon in the Regular style */
+  .warning::before {
+    font: var(--fa-font-regular);
+    content: "\f071";
+  }
+
+  /* an example rule targeting any element with the "updates" class to render fa-newspaper icon in the Light style */
+  .updates::before {
+    font: var(--fa-font-light);
+    content: "\f1ea";
+  }
+
+  /* an example rule targeting any element with the "contact" class to render fa-message icon in the Thin style */
+  .updates::before {
+    font: var(--fa-font-thin);
+    content: "\f27a";
+  }
+
+   /* an example rule targeting any element with the "delete" class to render fa-trash icon in the Sharp Solid style */
+  .delete::before {
+    font: var(--fa-font-sharp-solid);
+    content: "\f1f8";
+  }
+
+  /* an example rule targeting any element with the "add" class to render fa-circle-plus icon in the Sharp Regular style */
+  .add::before {
+    font: var(--fa-font-sharp-regular);
+    content: "\f055";
+  }
+
+  /* an example rule targeting any element with the "gaming" class to render fa-discord Brand icon */
+  .gaming::before {
+    font: var(--fa-font-brands);
+    content: "\f392";
+  }
+
+   /* an example rule targeting any element with the "custom-icon" class to render a custom icon (uploaded to a kit) */
+  .custom-icon::before {
+    font-family: "Font Awesome Kit"; /* note that you need to use "font-family" for custom icons */
+    content: "\[CUSTOM_ICON_UNICODE]"; /*  replace with custom icon's unicode value */
+  }
+
