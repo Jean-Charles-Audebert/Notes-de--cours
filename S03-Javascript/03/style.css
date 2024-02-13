@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+#box1, #box2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+    min-width: 300px;
+    border: solid 1px black;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+div {
+    height: 80px;
+    width: 80px;
+    border: 1px solid #333;
+}

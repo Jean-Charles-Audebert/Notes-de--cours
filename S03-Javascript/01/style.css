@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+div {
+    height: 80px;
+    width: 80px;
+    border: 1px solid #333;
+}
