@@ -2,7 +2,7 @@
 
 ## Cours Javascript par Sofiane.
 
-1. hoisting (le code est lu de haut en bas, la dernière commande est appliquée, exemple sur le css) => on déclare le script javascript à la fin du document html (juste avant </html>), ou en head mais en ajoutant `defer`. Doc à consulter (https://developer.mozilla.org/fr/docs/Web/API/Document/DOMContentLoaded_event)
+1. hoisting (le code est lu de haut en bas, la dernière commande est appliquée, exemple sur le css) => on déclare le script javascript à la fin du document html (juste avant </html>), ou en head mais en ajoutant `defer`. Doc à consulter (https://developer.mozilla.org/fr/docs/Web/API/Document/DOMContentLoaded_event). Le sens de lecture du code se fait dans le sens d'écriture du html. 1- phase de capture (dans le sens html, affecte tous les comportements), 2 - phase de bouillonnement (remonte dans le code avec les valeurs calculées dans la phase 1). => il faut toujours déclarer d'abord les variables en haut du fichier. (https://developer.mozilla.org/fr/docs/Glossary/Hoisting)
 2. `console.log("Hi);` : 
 	1. `console` est un `objet`
 	2. `.log` est une `méthode`, il en existe d'autres pour `console` comme `error`, `table`, `warn`, etc... doc(https://developer.mozilla.org/fr/docs/Web/API/console)
@@ -105,3 +105,21 @@ monTableau.forEach(div => {
   });
 
 ```
+
+### Callback
+Une fonction de callback (ou rappel) est une fonction qui est passée en paramètre d'une autre fonction.
+
+```js
+const  maFonction = (string, function) => {
+  ...
+}
+```
+## SetAttribute, getAttribute
+(https://developer.mozilla.org/fr/docs/Web/API/Element/setAttribute)
+
+setAttribute remplace.  Si l’attribut n’existe pas, il est créé. Sinon,  sa valeur est modifiée.
+
+Ce n'est pas adapté à ce que l'on chercher.
+
+classList est fait pour renvoyer une collection (liste, objet) et a des propriétés pour les manipuler.
+(https://developer.mozilla.org/fr/docs/Web/API/Element/classList)
