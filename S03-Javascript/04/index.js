@@ -85,9 +85,7 @@ const divAnimation = (delay, startTime, duration) => {
 
 const loto = () => {
     const randomTime = 2000 + Math.floor(Math.random() * 5000);
-    console.log(`randomTime : ${randomTime}`);
     const start = Date.now();
-
     const setIntevalId = divAnimation(0, start, randomTime);
 
 }
