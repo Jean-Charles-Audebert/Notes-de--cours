@@ -5,6 +5,20 @@ const btn = document.querySelector('#toggle');
 let currentIndex = 0; // initialisation de la variable qui stocke l'index de la div visée
 let caterpillarInterval; // intervalle pour la chenille
 
+// const addClass = () => {
+//     for (let i = 0; i < div.length; i++) {
+//         const element = div[ i ];
+//         element.classList.add("active");
+//     }
+// }
+
+// const removeClass = () => {
+//     for (let i = 0; i < div.length; i++) {
+//         const element = div[ i ];
+//         element.classList.remove("active");
+//     }
+// }
+
 const toggleClass = () => {
     for (let i = 0; i < div.length; i++) {
         const element = div[ i ];
@@ -12,9 +26,30 @@ const toggleClass = () => {
     }
 }
 
+/* btns.forEach(element => {
+    element.addEventListener("click", () => {
+        if (element.id == "prev") {
+            addClass();
+        };
+        if (element.id == "next") {
+            removeClass();
+        }
+    })
+});
+
+btn.addEventListener("click", () => {
+    for (let i = 0; i < div.length; i++) {
+        const element = div[ i ];
+        element.classList.toggle("active");
+    }
+}); */
+
+
 /**
  * déplacer la class active selon les boutons next et prev
  */
+
+
 
 /**
  * setActive Div() : fonction qui place la class active sur la div visée
@@ -35,6 +70,7 @@ const setActive = (index) => {
  * next : fonction  qui deplace la class active vers la droite
  */
 
+
 const next = () => {
     currentIndex = (currentIndex + 1) % div.length;  // on revient au début une fois qu'on est arrivé à la fin
     /**
@@ -51,49 +87,30 @@ const prev = () => {
     setActive(currentIndex);
 };
 
-/**
- * Faire une chenille sur les div :)
- */
-const caterpillar = (btn) => {
+/* btns.forEach(element => {
+    element.addEventListener('click', () => {   // on pose l'écouteur sur le clic
+        if (element.id === 'next') {            // si l'on clique sur le bouton next
+            next();                             // on appelle next
+        } else if (element.id === 'prev') {     // sinon si on clique sur le bouton prev
+            prev();                             // on appelle prev
+        } else if (element.id === 'toggle') {   // si l'on clique sur le bouton toggle
+            toggleClass();                      // on appelle la fonction toggleClass
+        }
+    });
+}); */
 
+const caterpillar = () => {
     if (caterpillarInterval) {
-        btn.innerText = "Chenille";
         clearInterval(caterpillarInterval);
-        caterpillarInterval = null;
     } else {
-        btn.innerText = "Stop";
         caterpillarInterval = setInterval(() => {
             next();
         }, 500);
     }
 }
 
-const easeOutQuad = (t) => {
-    return t * (2 - t);
-};
-
-const divAnimation = (delay, startTime, duration) => {
-    setTimeout(() => {
-        let timeDiff = duration - (Date.now() - startTime);
-        const progression = 500 * (1 - easeOutQuad(timeDiff / duration));
-        next();
-        if (timeDiff > 0) {
-            divAnimation(progression, startTime, duration);
-        }
-    }, delay)
-}
-
-const loto = () => {
-    const randomTime = 2000 + Math.floor(Math.random() * 5000);
-    console.log(`randomTime : ${randomTime}`);
-    const start = Date.now();
-
-    const setIntevalId = divAnimation(0, start, randomTime);
-
-}
-
 btns.forEach(element => {
-    element.addEventListener('click', () => {  
+    element.addEventListener('click', () => {   // on pose l'écouteur sur le clic
         switch (element.id) {
             case 'next':
                 next();
@@ -105,10 +122,7 @@ btns.forEach(element => {
                 toggleClass();
                 break;
             case 'caterpillar':
-                caterpillar(element);
-                break;
-            case 'loto':
-                loto();
+                caterpillar();
                 break;
             default:
                 break;
@@ -116,3 +130,4 @@ btns.forEach(element => {
     });
 });
 
+setActive(currentIndex);                        // on appelle la fonction pour mettre la class active au bon élément
