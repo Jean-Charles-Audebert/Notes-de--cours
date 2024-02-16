@@ -16,6 +16,7 @@ body {
     height: 80px;
     width: 80px;
     background-color: yellow;
+    color: yellow
     display: flex;
     align-items: center;
     justify-content: center;
