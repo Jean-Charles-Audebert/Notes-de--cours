@@ -16,7 +16,7 @@ body {
     height: 80px;
     width: 80px;
     background-color: yellow;
-    color: yellow
+    color: yellow;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,4 +25,6 @@ body {
 .box.active {
     background: darkblue;
     color: white;
+    scale: 1.1;
+    transition: 0.1s ease-in-out;
 }
